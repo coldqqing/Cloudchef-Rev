@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudChef</title>
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #fff8ed, #f8ece3);
+            color: #333;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            display: inline;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #f7c29e;
+            color: #fff;
+        }
+
+        /* Hero section */
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #f8eee2;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #3a3434;
+            margin-bottom: 20px;
+        }
+
+        .hero .highlight {
+            color: #F28920;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .hero .text-container {
+            flex: 1;
+            text-align: left;
+            padding-right: 20px;
+        }
+
+        .hero .text-container p {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #231d1d;
+        }
+
+        .image-container {
+            flex: 1;
+        }
+
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(221, 119, 41, 0.895);
+            
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* "Why Choose Cloud Chef?" section */
+        .why-choose {
+            padding: 60px 20px;
+            background-color: #fff4e6;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .why-choose h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .why-choose .features {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+
+        .why-choose .feature-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 280px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .why-choose .feature-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .why-choose .feature-item img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .why-choose .feature-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .why-choose .feature-item p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* "How It Works" section */
+        .how-it-works {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .how-it-works .steps {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .how-it-works .step-item {
+            flex: 1;
+            min-width: 280px;
+            background-color: #f3c991;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .how-it-works .step-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .how-it-works .step-item p {
+            font-size: 16px;
+            color: #555;
+        }
+
+    
+        /* CTA section */
+        .cta {
+            background-color: #ffefdf;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin: 20px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #555;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #F28920;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff7d00;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px;
+            background-color: #fff;
+            margin-top: 40px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        footer .footer-links {
+            margin-bottom: 20px;
+        }
+
+        footer .footer-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .image-container {
+                margin-top: 20px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .cta h2 {
+                font-size: 28px;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="signup.html">Kitchen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Cloud <span class="highlight">Chef</span></h1>
+        <div class="hero-content">
+            <div class="text-container">
+                <p>CloudChef adalah platform franchise online yang memudahkan pengguna membeli makanan dan menjalankan bisnis kuliner secara daring. Pengguna dapat menikmati berbagai pilihan makanan, sementara penjual dapat memperluas bisnis tanpa tempat fisik. CloudChef memastikan proses jual-beli lebih cepat, aman, dan nyaman.</p>
+            </div>
+            <div class="image-container">
+                <img src="image/logo.png" alt="logo Image">
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <h2>Why Choose CloudChef?</h2>
+        <div class="features">
+            <div class="feature-item">
+                <h3>Expand Your Business</h3>
+
+                <p>Cloud Chef membantu Anda memperluas bisnis tanpa batasan tempat fisik.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Fast Delivery</h3>
+                <p>Kami memastikan pengiriman cepat dan layanan yang memuaskan untuk pelanggan Anda.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Easy to Manage</h3>
+                <p>Sistem kami mudah digunakan, memudahkan Anda mengelola pesanan dan menu.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step-item">
+                <h3>Step 1</h3>
+                <p>Buatlah akun Chef-mu pada Cloud Kitchen.</p>
+            </div>
+            <div class="step-item">
+                <h3>Step 2</h3>
+                <p>Atur menu yang akan kamu jual, dan kami akan membantu kamu.</p>
+            </div>
+            <div class="step-item">
+                <h3>Step 3</h3>
+                <p>Atur bisnis kamu sesuai keinginan kamu sendiri!</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="cta">
+        <h2>BE A CLOUDCHEF NOW!</h2>
+        <p>Buatlah bisnis cloud kitchennmu dengan kami dan nikmati berbagai fitur yang ada sekarang! Lakukan registrasi sekarang dan dapatkan bantuan hingga kamu sudah membuka bisnis cloud kitchenmu sendiri!</p>
+        <a href="signup.html" class="cta-button">CLOUD KITCHEN</a>
+    </section>
+
+    <footer>
+        
+        <p>&copy; 2024 Cloud Chef. All rights reserved.</p>
+    </footer>
+</body>
+</html>

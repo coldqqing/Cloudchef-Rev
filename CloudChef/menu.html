@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Chef</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8ece3;
+            color: #333;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #f7c29e;
+            color: #fff;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 20px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 60px 0;
+        }
+
+        .hero img {
+            width: 300px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #F28920;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .menu {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .menu h1 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .menu-items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-item img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="signup.html">Kitchen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="image/logo.png" alt="logo">
+        
+    </section>
+
+    <section class="menu">
+        <h1>OUR TOP CHOICES!</h1>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="image/fried_chicken.png" alt="Fried Chicken">
+                <p>Fried Chicken</p>
+            </div>
+            <div class="menu-item">
+                <img src="image/burger.png" alt="Cheese Burger">
+                <p>Cheese Burger</p>
+                <!--https://www.blibli.com/p/beef-cheese-burger/ps--CH8-70015-00002-->
+            </div>
+            <div class="menu-item">
+                <img src="image/extra_cheese_pizza.png" alt="Extra Cheese Pizza">
+                <p>Extra Cheese Pizza</p>
+                <!--https://www.zomato.com/jalandhar/yo-pizza-ppr-market/order-->
+            </div>
+            <div class="menu-item">
+                <img src="image/ice_tea.png" alt="satay">
+                <p>Ice tea</p>
+                <!--https://parto.id/produk/detail/minuman-teh-panasdingin170780323982-->
+            </div>
+            <div class="menu-item">
+                <img src="image/Coffee.png"alt="coffee">
+                <p> Coffee</p>
+                <!--https://www.starbucksathome.com/sg/products/dark-roast-tin-->
+            </div>
+            <div class="menu-item">
+                <img src="image/taco.png"alt="taco">
+                <p> Taco</p>
+                <!--https://www.tacobueno.com/menu/the-muchaco/-->
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Cloud Chef. All rights reserved.</p>
+    </footer>
+</body>
+</html>
